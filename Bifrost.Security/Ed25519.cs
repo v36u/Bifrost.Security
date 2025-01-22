@@ -1,5 +1,6 @@
 ﻿#pragma warning disable CS8604
 using Bifrost.Security.Internal.Ed25519Ref10;
+using System;
 
 namespace Bifrost.Security
 {

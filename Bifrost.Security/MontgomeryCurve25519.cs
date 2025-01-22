@@ -1,6 +1,7 @@
 ﻿using Bifrost.Security.Internal;
 using Bifrost.Security.Internal.Ed25519Ref10;
 using Bifrost.Security.Internal.Salsa;
+using System;
 
 namespace Bifrost.Security
 {

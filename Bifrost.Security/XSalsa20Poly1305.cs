@@ -1,6 +1,7 @@
 ﻿#pragma warning disable CS8604 // Possible null reference argument.
 using Bifrost.Security.Internal;
 using Bifrost.Security.Internal.Salsa;
+using System;
 
 namespace Bifrost.Security
 {
@@ -44,7 +45,7 @@ namespace Bifrost.Security
         /// Decrypts the ciphertext and verifies its authenticity
         /// </summary>
         /// <returns>Plaintext if MAC validation succeeds, null if the data is invalid.</returns>
-        public static byte[]? TryDecrypt(byte[] ciphertext, byte[] key, byte[] nonce)
+        public static byte[] TryDecrypt(byte[] ciphertext, byte[] key, byte[] nonce)
         {
             if (ciphertext == null)
                 throw new ArgumentNullException("ciphertext");

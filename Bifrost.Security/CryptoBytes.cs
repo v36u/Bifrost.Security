@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace Bifrost.Security
 {
@@ -126,7 +127,7 @@ namespace Bifrost.Security
         // * I didn't use a second loop variable to index into `c`, since measurement shows that calculating it from `i` is cheaper. 
         // * Using exactly `i < bytes.Length` as upper bound of the loop allows the JITter to eliminate bounds checks on `bytes[i]`, so I chose that variant.
         // * Making `b` an int avoids unnecessary conversions from and to byte.
-        public static string? ToHexStringUpper(byte[] data)
+        public static string ToHexStringUpper(byte[] data)
         {
             if (data == null)
                 return null;
@@ -144,7 +145,7 @@ namespace Bifrost.Security
 
         // Explanation is similar to ToHexStringUpper
         // constant 55 -> 87 and -7 -> -39 to compensate for the offset 32 between lowercase and uppercase letters
-        public static string? ToHexStringLower(byte[] data)
+        public static string ToHexStringLower(byte[] data)
         {
             if (data == null)
                 return null;
@@ -160,7 +161,7 @@ namespace Bifrost.Security
             return new string(c);
         }
 
-        public static byte[]? FromHexString(string hexString)
+        public static byte[] FromHexString(string hexString)
         {
             if (hexString == null)
                 return null;
@@ -172,14 +173,14 @@ namespace Bifrost.Security
             return result;
         }
 
-        public static string? ToBase64String(byte[] data)
+        public static string ToBase64String(byte[] data)
         {
             if (data == null)
                 return null;
             return Convert.ToBase64String(data);
         }
 
-        public static byte[]? FromBase64String(string s)
+        public static byte[] FromBase64String(string s)
         {
             if (s == null)
                 return null;

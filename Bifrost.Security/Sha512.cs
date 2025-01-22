@@ -1,4 +1,5 @@
 ﻿using Bifrost.Security.Internal;
+using System;
 
 namespace Bifrost.Security
 {
